@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import ReactDOM from 'react-dom';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
 import './App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Loginscreen from './Loginscreen'
@@ -9,6 +10,9 @@ import Loginscreen from './Loginscreen'
 injectTapEventPlugin();
 
 
+global.requestAnimationFrame = function(callback) {
+  setTimeout(callback, 0);
+};
 
 class App extends Component {
   constructor(props){
@@ -39,6 +43,5 @@ class App extends Component {
     );
   }
 }
-ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;

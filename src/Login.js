@@ -4,6 +4,9 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 class Login extends Component {
   constructor(props){
     super(props);

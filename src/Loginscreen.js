@@ -4,6 +4,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Login from './Login';
 import Register from './Register';
 import Sync from './Sync';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 class Loginscreen extends Component {
   constructor(props){
     super(props);

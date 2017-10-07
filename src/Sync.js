@@ -2,6 +2,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React, { Component } from 'react';
 import { Text } from 'react';
 import AppBar from 'material-ui/AppBar';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 class Sync extends Component {
   constructor(props){
     super(props);
