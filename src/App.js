@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import ReactDOM from 'react-dom';
 import './App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Loginscreen from './Loginscreen'
@@ -38,4 +39,6 @@ class App extends Component {
     );
   }
 }
+ReactDOM.render(<App />, document.getElementById('root'));
+
 export default App;

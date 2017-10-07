@@ -18,7 +18,7 @@ class Register extends Component {
     }
   }
   handleClick(event){
-    var apiBaseUrl = "https://where.dog";
+    var apiBaseUrl = "http://where.dog";
     console.log("values",this.state.username,this.state.firstname,this.state.lastname,this.state.email,this.state.password);
     //To be done:check for empty values before hitting submit
     var self = this;
@@ -32,7 +32,7 @@ class Register extends Component {
     axios.post(apiBaseUrl+'/user', payload)
       .then(function (response) {
         console.log(response);
-        if(response.data.code === 200){
+        if(response.status === 200){
           console.log("registration successfull");
           var loginscreen=[];
           loginscreen.push(<Login parentContext={this}/>);
@@ -60,7 +60,9 @@ class Register extends Component {
               hintText="Enter your Username"
               floatingLabelText="Username"
               onChange = {(event,newValue) => this.setState({username:newValue})}
-            /><TextField
+            />
+            <br />
+            <TextField
               hintText="Enter your First Name"
               floatingLabelText="First Name"
               onChange = {(event,newValue) => this.setState({first_name:newValue})}

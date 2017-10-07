@@ -3,22 +3,25 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Login from './Login';
 import Register from './Register';
+import Sync from './Sync';
 class Loginscreen extends Component {
   constructor(props){
     super(props);
     this.state={
-      username:'',
-      password:'',
-      loginscreen:[],
-      loginmessage:'',
-      buttonLabel:'Register',
-      isLogin:true
+      username: '',
+      password: '',
+      loginscreen: [],
+      loginmessage: '',
+      buttonLabel: 'Register',
+      isLogin: !localStorage.getItem("userData"),
+      isLogged: !!localStorage.getItem("userData"),
+      userData: localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : {}
     }
   }
   handleClick(event){
     // console.log("event",event);
     var loginmessage;
-    if(this.state.isLogin){
+    if(this.state.isLogin && !this.state.isLogged){
       let loginscreen=[];
       loginscreen.push(<Register parentContext={this}/>);
       loginmessage = "Already registered.Go to Login";
@@ -29,7 +32,7 @@ class Loginscreen extends Component {
         isLogin:false
       })
     }
-    else{
+    else if (!this.state.isLogged){
       let loginscreen=[];
       loginscreen.push(<Login parentContext={this}/>);
       loginmessage = "Not Registered yet.Go to registration";
@@ -39,6 +42,15 @@ class Loginscreen extends Component {
         buttonLabel:"Register",
         isLogin:true
       })
+    } else {
+      let loginscreen=[]
+      loginscreen.push(<Sync data={this.state.userData}/>);
+      loginmessage = "Welcome " +this.state.userData.username+"!";
+      this.setState({
+        loginscreen: loginscreen,
+        loginmessage: loginmessage,
+        isLogged: true
+      });
     }
   }
   componentWillMount(){
@@ -48,7 +60,10 @@ class Loginscreen extends Component {
     this.setState({
       loginscreen:loginscreen,
       loginmessage:loginmessage
-    })
+    });
+    if (this.state.isLogged) {
+      this.handleClick();
+    }
   }
   render() {
     return (

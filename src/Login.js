@@ -13,18 +13,22 @@ class Login extends Component {
     }
   }
   handleClick(event){
-    var apiBaseUrl = "https://where.dog";
+    var apiBaseUrl = "http://where.dog";
     var self = this;
     axios.post(apiBaseUrl+'/login?user='+this.state.username+'&password='+this.state.password)
       .then(function (response) {
         console.log(response);
-        if(response.data.code === 200) {
+        if(response.status === 200) {
           console.log("Login successfull");
-          var uploadScreen=[];
-          // uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-          self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
+          localStorage.setItem("userData", JSON.stringify(response.data));
+          self.props.parentContext.setState({
+            isLogged:true,
+            userData: response.data,
+            isLogin:false
+          });
+          self.props.parentContext.handleClick();
         }
-        else if(response.data.code === 400) {
+        else if(response.status === 400) {
           console.log("Username password do not match");
           alert("username password do not match")
         }
