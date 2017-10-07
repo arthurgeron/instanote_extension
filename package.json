@@ -13,17 +13,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "webpack",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill",
     "eject": "react-scripts eject"
-  },
-  "jest": {
-    "name": "insta-note",
-    "jest": {
-      "verbose": true,
-      "setupFiles": [
-        "raf/polyfill"
-      ]
-    }
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

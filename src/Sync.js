@@ -17,7 +17,7 @@ class Sync extends Component {
     let userData = [];
     for (let key of Object.keys(this.state.userData)) {
       if(!!this.state.userData[key]) {
-        userData.push([<span>{key}': '{this.state.userData[key]}</span>,<br/>]);
+        userData.push([<span key={key}>{key}': '{this.state.userData[key]}</span>,<br key={key + 'br'}/>]);
       }
     }
     this.setState({
