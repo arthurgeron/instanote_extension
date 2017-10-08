@@ -16,7 +16,7 @@ class Login extends Component {
     }
   }
   handleClick(event){
-    var apiBaseUrl = "http://where.dog";
+    var apiBaseUrl = "http://localhost:8080";
     var self = this;
     axios.post(apiBaseUrl+'/login?user='+this.state.username+'&password='+this.state.password)
       .then(function (response) {

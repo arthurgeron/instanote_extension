@@ -32,13 +32,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div>
+          {this.state.loginPage}
+        </div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Insta Note</h1>
         </header>
-        <div className="App">
-          {this.state.loginPage}
-        </div>
       </div>
     );
   }
