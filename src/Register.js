@@ -60,7 +60,7 @@ class Register extends Component {
             />
             <TextField
               required
-              maxlength={50}
+              maxLength={50}
               pattern={'[A-Za-z0-9]{1,50}'}
               hintText="Enter your Username"
               floatingLabelText="Username"
@@ -69,7 +69,7 @@ class Register extends Component {
             <br />
             <TextField
               required
-              maxlength={50}
+              maxLength={50}
               hintText="Enter your First Name"
               floatingLabelText="First Name"
               onChange = {(event,newValue) => this.setState({first_name:newValue})}
@@ -77,7 +77,7 @@ class Register extends Component {
             <br/>
             <TextField
               required
-              maxlength={50}
+              maxLength={50}
               hintText="Enter your Last Name"
               floatingLabelText="Last Name"
               onChange = {(event,newValue) => this.setState({last_name:newValue})}
@@ -85,7 +85,7 @@ class Register extends Component {
             <br/>
             <TextField
               required
-              maxlength={100}
+              maxLength={100}
               hintText="Enter your Email"
               type="email"
               floatingLabelText="Email"
@@ -94,7 +94,7 @@ class Register extends Component {
             <br/>
             <TextField
               required
-              maxlength={30}
+              maxLength={30}
               type = "password"
               hintText="Enter your Password"
               floatingLabelText="Password"
