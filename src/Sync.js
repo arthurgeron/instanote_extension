@@ -13,7 +13,7 @@ class Sync extends Component {
     this.state = {
       userData: this.props.data,
       displayUserData: [],
-      apiBaseUrl: "http://localhost:8080",
+      apiBaseUrl: "http://where.dog",
       inputValue: !!localStorage.getItem("text") ? localStorage.getItem("text") : '' ,
       lastUpdated: !!localStorage.getItem("lastUpdated") ? localStorage.getItem("lastUpdated") : '01/01/2000 00:00:00'
     }
