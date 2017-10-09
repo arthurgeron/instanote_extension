@@ -17,7 +17,10 @@ module.exports = {
   resolve: {
     modules: [path.resolve(__dirname, '/src'), 'node_modules/'],
     descriptionFiles: ['package.json'],
-    extensions : ['.js', '.ts']
+    extensions : ['.js', '.ts'],
+    alias: {
+      "react-native": "react-native-web"
+    }
   },
   module: {
     loaders: [
@@ -44,4 +47,4 @@ module.exports = {
       }
     ]
   }
-}
+};

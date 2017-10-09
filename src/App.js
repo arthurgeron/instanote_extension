@@ -9,6 +9,7 @@ import Loginscreen from './Loginscreen'
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
+document.write(require('./InstaNoteMobile/index.android.js'));
 
 global.requestAnimationFrame = function(callback) {
   setTimeout(callback, 0);
