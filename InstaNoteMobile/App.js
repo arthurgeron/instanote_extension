@@ -3,27 +3,35 @@
  * https://github.com/facebook/react-native
  * @flow
  */
+import Loginscreen from './Loginscreen';
+import logo from './logo.svg';
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
 export default class InstaNoteMobile extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      loginPage:[],
+      uploadScreen:[]
+    }
+  }
+  componentWillMount(){
+    var loginPage =[];
+    loginPage.push(<Loginscreen key={'loginscreen5'} parentContext={this}/>);
+    this.setState({
+      loginPage:loginPage
+    })
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Hello There!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      <View className="App">
+        <View>
+          {this.state.loginPage}
+        </View>
       </View>
     );
   }
@@ -46,7 +54,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-AppRegistry.registerComponent('InstaNoteMobile', () => InstaNoteMobile);
+ // AppRegistry.registerComponent('InstaNoteMobile', () => InstaNoteMobile);
 //This is what you pasted, code to start application in case of web
 if (window.document) {
   AppRegistry.runApplication('InstaNoteMobile', {

@@ -28,8 +28,13 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: path.resolve('./node_modules/'),
         loader: 'babel-loader',
+        include: [
+          path.join(__dirname, 'node_modules/react-native-storage')
+        ],
         query: {
-          presets: ['es2015', 'react']
+          cacheDirectory: true,
+          cs: ['es2015','stage-1', 'react'],
+          plugins: ['transform-runtime']
         }
       },
       {
