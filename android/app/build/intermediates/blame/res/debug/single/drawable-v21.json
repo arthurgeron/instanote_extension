@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/hellguy/Documents/Projects/instanote_extension/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/hellguy/.android/build-cache/71987ddbebf96b6b099f3f2d288ddebb581c0a69/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/home/hellguy/Documents/Projects/instanote_extension/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/hellguy/.android/build-cache/71987ddbebf96b6b099f3f2d288ddebb581c0a69/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    }
+]

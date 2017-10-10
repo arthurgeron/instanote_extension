@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/hellguy/.android/build-cache/2ff88ae404b0550ab1476cde739c0888264e385c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e013739f7ddb6740bf196dc515d8999a6030f9ea">
+        <dex dex="/home/hellguy/Documents/Projects/instanote_extension/android/app/build/intermediates/pre-dexed/debug/classes_d61e81fd3231e556dd988de03f199f795abb9186.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/hellguy/.android/build-cache/2ff88ae404b0550ab1476cde739c0888264e385c/output/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/home/hellguy/Documents/Projects/instanote_extension/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_a6622476baf0534800f0f5970ccffd84aa5016b6.jar" />
+    </item>
+
+</items>
