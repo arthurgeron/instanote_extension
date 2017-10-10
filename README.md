@@ -1,4 +1,5 @@
-# Insta Note Extension
+# Insta Note Mobile
 
-Simple extension made for instantly sharing text between your phone and browser.
-Coming soon to Android, Firefox, Opera and Chrome.
+Simple application made for instantly sharing text between your phone and browser.
+Coming soon to Android and iOS devices.
+[InstaNote](https://github.com/arthurgeron/instanote_extension)
