@@ -23,7 +23,9 @@ class Sync extends Component {
     this.state = {
       userData: this.props.data,
       displayUserData: [],
-      apiBaseUrl: "http://where.dog"
+      apiBaseUrl: 'http://where.dog',
+      lastUpdated: '01/01/2000 00:00:00',
+      text: ''
     };
     this.updateText();
   }
