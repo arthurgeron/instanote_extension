@@ -57,7 +57,7 @@ MERGED from [org.webkit:android-jsc:r174650] /home/hellguy/.android/build-cache/
 	android:allowBackup
 		ADDED from /home/hellguy/Documents/Projects/instanote_extension/android/app/src/main/AndroidManifest.xml:15:7-33
 	android:icon
-		ADDED from /home/hellguy/Documents/Projects/instanote_extension/android/app/src/main/AndroidManifest.xml:17:7-41
+		ADDED from /home/hellguy/Documents/Projects/instanote_extension/android/app/src/main/AndroidManifest.xml:17:7-39
 	android:theme
 		ADDED from /home/hellguy/Documents/Projects/instanote_extension/android/app/src/main/AndroidManifest.xml:18:7-38
 	android:name

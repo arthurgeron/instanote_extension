@@ -1977,7 +1977,7 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f040028;
     }
     public static final class mipmap {
-        public static final int ic_launcher=0x7f030000;
+        public static final int instanote=0x7f030000;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f070000;
@@ -2028,8 +2028,6 @@ containing a value of this type.
         public static final int Animation_AppCompat_Dialog=0x7f09007c;
         public static final int Animation_AppCompat_DropDownUp=0x7f09007d;
         public static final int Animation_Catalyst_RedBox=0x7f09007e;
-        /**  Customize your theme here. 
-         */
         public static final int AppTheme=0x7f09007f;
         public static final int Base_AlertDialog_AppCompat=0x7f090080;
         public static final int Base_AlertDialog_AppCompat_Light=0x7f090081;
