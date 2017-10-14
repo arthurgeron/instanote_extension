@@ -1,5 +1,5 @@
 
-# Created by https://www.gitignore.io/api/osx,node,linux,macos,windows,android,reactnative,androidstudio
+# Created by https://www.gitignore.io/api/osx,node,linux,macos,gradle,windows,android,reactnative,intellij+all,androidstudio,visualstudiocode
 
 ### Android ###
 # Built application files
@@ -131,7 +131,7 @@ Thumbs.db
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
+.tmp
 # Package Files #
 *.war
 *.ear
@@ -159,6 +159,57 @@ fabric.properties
 ### AndroidStudio Patch ###
 
 !/gradle/wrapper/gradle-wrapper.jar
+
+### Intellij+all ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+
+# Sensitive or high-churn files:
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+
+# Gradle:
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# CMake
+cmake-build-debug/
+
+# Mongo Explorer plugin:
+.idea/**/mongoSettings.xml
+
+## File-based project format:
+
+## Plugin-specific files:
+
+# IntelliJ
+
+# mpeltonen/sbt-idea plugin
+
+# JIRA plugin
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# Ruby plugin and RubyMine
+/.rakeTasks
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+
+### Intellij+all Patch ###
+# Ignores the whole idea folder
+# See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
+
+.idea/
 
 ### Linux ###
 
@@ -283,6 +334,8 @@ typings/
 ### ReactNative.Gradle Stack ###
 **/build/
 
+haste-map-react-native-packager*
+react-native-packager-*
 # Ignore Gradle GUI config
 gradle-app.setting
 
@@ -401,6 +454,14 @@ buck-out/
 .buckversion
 .fakebuckversion
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
 ### Windows ###
 # Windows thumbnail cache files
 ehthumbs_vista.db
@@ -420,4 +481,15 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/osx,node,linux,macos,windows,android,reactnative,androidstudio
+### Gradle ###
+
+# Ignore Gradle GUI config
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+
+# Cache of project
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+# End of https://www.gitignore.io/api/osx,node,linux,macos,gradle,windows,android,reactnative,intellij+all,androidstudio,visualstudiocode
