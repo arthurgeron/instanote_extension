@@ -6,10 +6,10 @@
 import Loginscreen from './Loginscreen';
 import logo from './logo.svg';
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  View
-} from 'react-native';
+  import {
+    AppRegistry,
+    View
+  } from 'react-native';
 import Splash from './Splash';
 
 export default class InstaNoteMobile extends Component {
@@ -26,9 +26,10 @@ export default class InstaNoteMobile extends Component {
     let loginPage =[];
     let splashScreen = [];
     loginPage.push(<Loginscreen key={'loginscreen5'} parentContext={this}/>);
-    splashScreen.push(<Splash key={'splashScreen'} parentContext={this}></Splash>);
+    splashScreen.push(<Splash key={'splashScreen'} parentContext={this}/>);
     this.setState({
-      loginPage:loginPage
+      loginPage: loginPage,
+      splashScreen: splashScreen
     })
   }
   render() {
@@ -36,7 +37,7 @@ export default class InstaNoteMobile extends Component {
 
       <View className="App">
         <View>
-          {this.state.loginPage}
+          {this.state.splash ? this.state.splashScreen : this.state.loginPage}
         </View>
       </View>
     );
