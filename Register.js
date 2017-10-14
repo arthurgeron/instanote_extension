@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { COLOR, ThemeProvider } from 'react-native-material-ui';
+import { ThemeProvider } from 'react-native-material-ui';
 import axios from 'axios';
 import { TextInput, Button, View, Text } from 'react-native';
 import 'core-js/es6/map';
@@ -7,16 +7,8 @@ import 'core-js/es6/set';
 import Login from './Login';
 import PopupDialog, { DialogTitle, SlideAnimation } from 'react-native-popup-dialog';
 
-const uiTheme = {
-  palette: {
-    primaryColor: COLOR.green500,
-  },
-  toolbar: {
-    container: {
-      height: 50,
-    },
-  },
-};
+let Styles = require('./INStyle');
+
 class Register extends Component {
   constructor(props){
     super(props);
@@ -72,7 +64,7 @@ class Register extends Component {
   render() {
     return (
       <View >
-        <ThemeProvider uiTheme={uiTheme} style={{elevation:0}}>
+        <ThemeProvider uiTheme={Styles.uiTheme} style={{elevation:0}}>
           <View style={{elevation:0}}>
             <TextInput
               required

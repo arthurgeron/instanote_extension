@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
-import { COLOR, ThemeProvider } from 'react-native-material-ui';
+import { ThemeProvider } from 'react-native-material-ui';
 import Login from './Login';
-import { Button, View, Text } from 'react-native';
+import { Animated, Easing, Button, View, Text } from 'react-native';
 import Register from './Register';
 import Sync from './Sync';
 import Storage from './LocalStorage';
 import 'core-js/es6/map';
 import 'core-js/es6/set';
 
-const uiTheme = {
-  palette: {
-    primaryColor: COLOR.green500,
-  },
-  toolbar: {
-    container: {
-      height: 50,
-    },
-  },
-};
+
+let Styles = require('./INStyle');
+
 class Loginscreen extends Component {
   constructor(props){
     super(props);
@@ -27,7 +20,27 @@ class Loginscreen extends Component {
       loginscreen: [],
       loginmessage: '',
       buttonLabel: 'Register'
-    }
+    };
+
+    this.animationValue = new Animated.Value(0);
+  }
+  backgroundColor() {
+    this.animationValue.setValue(0);
+    Animated.timing(
+      this.animationValue,
+      {
+        toValue: 150,
+        duration:5000
+      }
+    ).start(() => {
+      Animated.timing(
+        this.animationValue,
+        {
+          toValue: 0,
+          duration:5000
+        }
+      ).start(() => this.backgroundColor())
+    })
   }
   handleClick(event){
     console.log("event",event);
@@ -79,21 +92,29 @@ class Loginscreen extends Component {
       this.handleClick();
     }
   }
+  componentDidMount() {
+    this.backgroundColor();
+  }
   render() {
+    const color = this.animationValue.interpolate({
+      inputRange: [0, 150],
+      outputRange: ['rgb(20, 100, 70)', 'rgb(51, 250, 170)']
+    });
+    var styleS = {backgroundColor: color};
     return (
-      <View className="loginscreen">
+      <Animated.View className="loginscreen" style={styleS}>
         {this.state.loginscreen}
-        <View>
+        <View >
           <Text>
             {this.state.loginmessage}
           </Text>
-          <ThemeProvider uiTheme={uiTheme}>
-            <View>
+          <ThemeProvider uiTheme={Styles.uiTheme}>
+            <View >
               <Button title={this.state.buttonLabel.toString()} primary={true} style={style} onPress={(event) => this.handleClick(event)}/>
             </View>
           </ThemeProvider>
         </View>
-      </View>
+      </Animated.View>
     );
   }
 }

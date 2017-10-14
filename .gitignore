@@ -8,9 +8,15 @@
 
 # production
 /build
+/android/build
+debug/*
+/android/app/build
 # idea
 .idea
+.tmp
 
+haste-map-react-native-packager-*
+react-native-packager-cache-*
 bundle.js
 # misc
 .DS_Store

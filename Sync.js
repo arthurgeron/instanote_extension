@@ -1,4 +1,4 @@
-import { COLOR, ThemeProvider } from 'react-native-material-ui';
+import { ThemeProvider } from 'react-native-material-ui';
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { TextInput, View } from 'react-native';
@@ -7,16 +7,8 @@ import Storage from './LocalStorage';
 import 'core-js/es6/set';
 import qs from 'qs';
 
-const uiTheme = {
-  palette: {
-    primaryColor: COLOR.green500,
-  },
-  toolbar: {
-    container: {
-      height: 50,
-    },
-  },
-};
+let Styles = require('./INStyle');
+
 class Sync extends Component {
   constructor(props){
     super(props);
@@ -138,12 +130,12 @@ class Sync extends Component {
   render() {
     return (
       <View>
-        <ThemeProvider uiTheme={uiTheme}>
+        <ThemeProvider uiTheme={Styles.uiTheme}>
           <View>
           </View>
         </ThemeProvider>
         <View className="sync">
-          <ThemeProvider uiTheme={uiTheme}>
+          <ThemeProvider uiTheme={Styles.uiTheme}>
             <TextInput
               size={10000}
               maxLength={10000}

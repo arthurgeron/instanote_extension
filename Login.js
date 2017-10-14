@@ -4,18 +4,8 @@ import axios from 'axios';
 import { TextInput, Button, View } from 'react-native';
 import 'core-js/es6/map';
 import 'core-js/es6/set';
-import { COLOR, ThemeProvider } from 'react-native-material-ui';
+import { ThemeProvider } from 'react-native-material-ui';
 
-const uiTheme = {
-  palette: {
-    primaryColor: COLOR.green500,
-  },
-  toolbar: {
-    container: {
-      height: 50,
-    },
-  },
-};
 class Login extends Component {
   constructor(props){
     super(props);
@@ -55,28 +45,39 @@ class Login extends Component {
   }
   render() {
     return (
-      <View>
-        <ThemeProvider uiTheme={uiTheme}>
-          <View>
+      <View >
+        <ThemeProvider uiTheme={Styles.uiTheme}>
+          <View style={Styles.login.view}>
+            <View style={Styles.login.innerView}>
             <TextInput
+              style={Styles.login.loginText}
               placeholder='Enter your Username'
               floatingLabelText='Username'
               onChangeText = {(newValue) => this.setState({username:newValue})}
             />
+            </View>
+            <View style={Styles.login.innerView}>
             <TextInput
+              style={Styles.login.passwordText}
               type='password'
               placeholder='Enter your Password'
               floatingLabelText='Password'
               secureTextEntry={true}
               onChangeText = {(newValue) => this.setState({password:newValue})}
             />
-            <Button title='Submit' primary={true} style={style} onPress={(event) => this.handleClick(event)}/>
+            </View>
+            <View style={Styles.login.innerView}>
+            <Button title='Submit' primary={true} onPress={(event) => this.handleClick(event)}/>
+            </View>
           </View>
         </ThemeProvider>
       </View>
     );
   }
 }
+
+
+let Styles = require('./INStyle');
 const style = {
   margin: 15,
 };

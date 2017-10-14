@@ -8,26 +8,32 @@ import logo from './logo.svg';
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
   View
 } from 'react-native';
+import Splash from './Splash';
+
 export default class InstaNoteMobile extends Component {
   constructor(props){
     super(props);
     this.state={
       loginPage:[],
-      uploadScreen:[]
+      uploadScreen:[],
+      splashScreen:[],
+      splash: true
     }
   }
   componentWillMount(){
-    var loginPage =[];
+    let loginPage =[];
+    let splashScreen = [];
     loginPage.push(<Loginscreen key={'loginscreen5'} parentContext={this}/>);
+    splashScreen.push(<Splash key={'splashScreen'} parentContext={this}></Splash>);
     this.setState({
       loginPage:loginPage
     })
   }
   render() {
     return (
+
       <View className="App">
         <View>
           {this.state.loginPage}
@@ -36,25 +42,6 @@ export default class InstaNoteMobile extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
- // AppRegistry.registerComponent('InstaNoteMobile', () => InstaNoteMobile);
 //This is what you pasted, code to start application in case of web
 if (window.document) {
   AppRegistry.runApplication('InstaNoteMobile', {
