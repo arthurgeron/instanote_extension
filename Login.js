@@ -11,10 +11,12 @@ class Login extends Component {
     super(props);
     this.state = {
       username:'',
-      password:''
+      password:'',
+      registerButtonLabel: 'Register'
+
     }
   }
-  handleClick(event){
+  handleLoginClick(event){
     var apiBaseUrl = "https://where.dog";
     var self = this;
     axios.post(apiBaseUrl+'/login?user='+this.state.username+'&password='+this.state.password)
@@ -43,6 +45,12 @@ class Login extends Component {
         console.log(error);
       });
   }
+  handleRegisterClick(event) {
+    this.props.parentContext.setState({
+      isLogged: false,
+      isLogin: false
+    });
+  }
   render() {
     return (
       <View >
@@ -67,7 +75,10 @@ class Login extends Component {
             />
             </View>
             <View style={Styles.login.innerView}>
-            <Button title='Submit' primary={true} onPress={(event) => this.handleClick(event)}/>
+              <Button title='Submit' primary={true} onPress={(event) => this.handleLoginClick(event)}/>
+            </View>
+            <View style={Styles.login.innerView}>
+              <Button title={this.state.registerButtonLabel.toString()} primary={true} style={{marginTop: '10'}} onPress={(event) => this.handleRegisterClick(event)}/>
             </View>
           </View>
         </ThemeProvider>

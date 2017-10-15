@@ -8,8 +8,9 @@ class Splash extends Component {
   componentWillMount () {
     let self = this;
     setTimeout (() => {
-      //self.props.parentContext.setState({splash: false});
+      self.props.parentContext.setState({splash: false});
     }, 2000);
+    this.rotateImage();
   }
   rotateImage() {
     this.animationValue.setValue(0);
